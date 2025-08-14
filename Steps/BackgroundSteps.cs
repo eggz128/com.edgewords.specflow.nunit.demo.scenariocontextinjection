@@ -1,7 +1,9 @@
 ﻿using System;
-using TechTalk.SpecFlow;
+//using TechTalk.SpecFlow;
+using Reqnroll;
 using com.edgewords.specflow.nunit.demo.scenariocontextinjection.POCOs;
-using TechTalk.SpecFlow.Assist;
+//using TechTalk.SpecFlow.Assist;
+using Reqnroll.Assist;
 using System.Collections.Generic;
 
 namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps

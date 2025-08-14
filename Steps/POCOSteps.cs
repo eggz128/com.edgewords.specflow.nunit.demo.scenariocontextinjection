@@ -1,6 +1,7 @@
 ﻿using com.edgewords.specflow.nunit.demo.scenariocontextinjection.POCOs;
 using System;
-using TechTalk.SpecFlow;
+//using TechTalk.SpecFlow;
+using Reqnroll;
 
 namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps
 {

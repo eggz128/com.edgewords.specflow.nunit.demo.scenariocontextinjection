@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using TechTalk.SpecFlow;
-using TechTalk.SpecFlow.Assist;
+//using TechTalk.SpecFlow;
+using Reqnroll;
+//using TechTalk.SpecFlow.Assist;
+using Reqnroll.Assist;
 
 namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps
 {
@@ -25,10 +27,11 @@ namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps
             //Get our table back from the ScenarioContext dictionary object
             //that has been injected in here by Specflow 
             //Remember to        -> | cast | <-  from plain Object back to Table
-            Table horizontaltable = (Table)_scenarioContext["HorizontalTable"]; 
+            Table horizontaltable = (Table)_scenarioContext["HorizontalTable"];
 
             //We now have a specflow table we can use...
-            TableRow row = horizontaltable.Rows[0];
+            //TableRow row = horizontaltable.Rows[0]; //TableRow datatype does not exist in Reqnroll
+            DataTableRow row = horizontaltable.Rows[0];
             Console.WriteLine(row["Username"]);
             Console.WriteLine(row["Password"]);
         }
