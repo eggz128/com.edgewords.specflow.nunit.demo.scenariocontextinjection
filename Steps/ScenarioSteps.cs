@@ -22,7 +22,7 @@ namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps
         {
             //Get our table back from the ScenarioContext dictionary object
             //that has been injected into the constructor
-            //Remember to        -> | cast | <-  from plain Object back to Table
+            //Remember to               -> | cast | <-  from plain Object back to Table
             DataTable horizontaltable = (DataTable)_scenarioContext["HorizontalTable"];
 
             //We now have a DatTable we can use...
