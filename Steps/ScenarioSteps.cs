@@ -77,7 +77,7 @@ namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps
         [Then(@"this step needs context injection to also have access to data")]
         public void ThenThisStepNeedsContextInjectionToAlsoHaveAccessToData()
         {
-            ScenarioContext.Current.Pending();
+            _scenarioContext.Pending();
         }
 
 
