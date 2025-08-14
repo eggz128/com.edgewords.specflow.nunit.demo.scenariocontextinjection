@@ -38,7 +38,7 @@ namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps
 
 
         [Given(@"an inline horizontal table with one row of data like this")]
-        public void GivenAnInlineHorizontalTableWithOneRowOfDataLikeThis(Table table)
+        public void GivenAnInlineHorizontalTableWithOneRowOfDataLikeThis(DataTable table)
         {
             //Put the whole table in to a ScenarioContext object with a dictonary key
             _scenarioContext["HorizontalTable"] = table;
@@ -63,7 +63,7 @@ namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps
         }
 
         [Given(@"or an inline vertical table like this")]
-        public void GivenOrAnInlineVerticalTableLikeThis(Table table)
+        public void GivenOrAnInlineVerticalTableLikeThis(DataTable table)
         {
             _scenarioContext["VerticalTable"] = table;
 
@@ -77,7 +77,7 @@ namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps
         }
         
         [Given(@"even a table with multpile rows")]
-        public void GivenEvenATableWithMultpileRows(Table table)
+        public void GivenEvenATableWithMultpileRows(DataTable table)
         {
             _scenarioContext["MultiRowTable"] = table;
 

@@ -27,7 +27,7 @@ namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps
             //Get our table back from the ScenarioContext dictionary object
             //that has been injected in here by Specflow 
             //Remember to        -> | cast | <-  from plain Object back to Table
-            Table horizontaltable = (Table)_scenarioContext["HorizontalTable"];
+            DataTable horizontaltable = (DataTable)_scenarioContext["HorizontalTable"];
 
             //We now have a specflow table we can use...
             //TableRow row = horizontaltable.Rows[0]; //TableRow datatype does not exist in Reqnroll
@@ -39,7 +39,7 @@ namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps
         [Then(@"we write out the verticle table")]
         public void ThenWeWriteOutTheVerticleTable()
         {
-            Table vertialTable = (Table)_scenarioContext["VerticalTable"];
+            Table vertialTable = (DataTable)_scenarioContext["VerticalTable"];
 
             //Unpack the table in to a dictionary (key,value pairs)
             var dictionary = new Dictionary<string, string>();
@@ -57,7 +57,7 @@ namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps
         [Then(@"we loop through multirow table")]
         public void ThenWeLoopThroughMultirowTable()
         {
-            Table multirowTable = (Table)_scenarioContext["MultiRowTable"];
+            DataTable multirowTable = (DataTable)_scenarioContext["MultiRowTable"];
             //Once we have the Specflow table back from _scenarioContext just use as normal...
             foreach(var row in multirowTable.Rows)
             {
@@ -69,7 +69,7 @@ namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps
         [Then(@"we can also get at an individual rows data directly")]
         public void ThenWeCanAlsoGetAtAnIndividualRowsDataDirectly()
         {
-            Table multirowTable = (Table)_scenarioContext["MultiRowTable"];
+            DataTable multirowTable = (DataTable)_scenarioContext["MultiRowTable"];
             var data = multirowTable.Rows[1];
             Console.WriteLine(data["Sku"]);
         }
