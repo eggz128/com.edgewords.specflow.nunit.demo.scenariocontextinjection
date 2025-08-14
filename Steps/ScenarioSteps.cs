@@ -25,7 +25,7 @@ namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps
             //Remember to               -> | cast | <-  from plain Object back to Table
             DataTable horizontaltable = (DataTable)_scenarioContext["HorizontalTable"];
 
-            //We now have a DatTable we can use...
+            //We now have a DataTable we can use...
             DataTableRow row = horizontaltable.Rows[0];
             Console.WriteLine(row["Username"]);
             Console.WriteLine(row["Password"]);
