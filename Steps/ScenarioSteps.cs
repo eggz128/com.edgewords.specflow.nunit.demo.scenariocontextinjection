@@ -8,10 +8,10 @@ namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps
     [Binding]
     public class ScenarioSteps
     {
-        //Field to hold ScenarioContext injected by Specflow
+        //Field to hold injected ScenarioContext 
         private readonly ScenarioContext _scenarioContext;
 
-        //Constructor accepts ScenarioContext that will be injected by specflow. Puts it in field.
+        //Constructor accepts ScenarioContext that will be injected. Puts it in field.
         public ScenarioSteps(ScenarioContext scenarioContext)
         {
             _scenarioContext = scenarioContext;
@@ -21,12 +21,11 @@ namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps
         public void ThenWeWriteOutTheHorizontalTable()
         {
             //Get our table back from the ScenarioContext dictionary object
-            //that has been injected in here by Specflow 
+            //that has been injected into the constructor
             //Remember to        -> | cast | <-  from plain Object back to Table
             DataTable horizontaltable = (DataTable)_scenarioContext["HorizontalTable"];
 
-            //We now have a specflow table we can use...
-            //TableRow row = horizontaltable.Rows[0]; //TableRow datatype does not exist in Reqnroll
+            //We now have a DatTable we can use...
             DataTableRow row = horizontaltable.Rows[0];
             Console.WriteLine(row["Username"]);
             Console.WriteLine(row["Password"]);
@@ -54,7 +53,7 @@ namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps
         public void ThenWeLoopThroughMultirowTable()
         {
             DataTable multirowTable = (DataTable)_scenarioContext["MultiRowTable"];
-            //Once we have the Specflow table back from _scenarioContext just use as normal...
+            //Once we have the DataTble back from _scenarioContext just use as normal...
             foreach(var row in multirowTable.Rows)
             {
                 Console.WriteLine(row["Sku"]);

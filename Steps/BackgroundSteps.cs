@@ -9,7 +9,7 @@ namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps
     [Binding]
     public class BackgroundSteps
     {
-        //Using Specflows ScenarioContext object to pass around data
+        //Using ScenarioContext object to pass around data
         private readonly ScenarioContext _scenarioContext;
 
         //Using custom POCOs
@@ -25,7 +25,7 @@ namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps
         public BackgroundSteps(ScenarioContext scenarioContext,
             HorizontalTablePOCO horizontalTableShared, VerticalTablePOCO verticalTableShared) //Added arguments for POCO sharing
         {
-            //for Specflows ScenarioContext object sharing
+            //for ScenarioContext object sharing
             _scenarioContext = scenarioContext;
 
             //POCO sharing
