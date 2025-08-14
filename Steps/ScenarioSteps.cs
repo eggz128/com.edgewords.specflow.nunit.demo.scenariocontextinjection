@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-//using TechTalk.SpecFlow;
 using Reqnroll;
-//using TechTalk.SpecFlow.Assist;
 using Reqnroll.Assist;
 
 namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps
@@ -18,8 +16,6 @@ namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps
         {
             _scenarioContext = scenarioContext;
         }
-
-
 
         [Then(@"we write out the horizontal table")]
         public void ThenWeWriteOutTheHorizontalTable()
@@ -79,7 +75,6 @@ namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps
         {
             _scenarioContext.Pending();
         }
-
 
     }
 }

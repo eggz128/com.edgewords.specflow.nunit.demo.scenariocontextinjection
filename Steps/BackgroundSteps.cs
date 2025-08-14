@@ -1,8 +1,6 @@
 ﻿using System;
-//using TechTalk.SpecFlow;
 using Reqnroll;
 using com.edgewords.specflow.nunit.demo.scenariocontextinjection.POCOs;
-//using TechTalk.SpecFlow.Assist;
 using Reqnroll.Assist;
 using System.Collections.Generic;
 
@@ -23,8 +21,7 @@ namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps
         private HorizontalTablePOCO localHorizontalTablePOCO;
         private VerticalTablePOCO localVerticalTablePOCO;
         
-
-
+        //Constructor with args for dep injection
         public BackgroundSteps(ScenarioContext scenarioContext,
             HorizontalTablePOCO horizontalTableShared, VerticalTablePOCO verticalTableShared) //Added arguments for POCO sharing
         {
@@ -35,7 +32,6 @@ namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps
             this.horizontalTableShared = horizontalTableShared;
             this.verticalTableShared = verticalTableShared;
         }
-
 
         [Given(@"an inline horizontal table with one row of data like this")]
         public void GivenAnInlineHorizontalTableWithOneRowOfDataLikeThis(DataTable table)
@@ -53,13 +49,9 @@ namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps
             horizontalTableShared.Password = localHorizontalTablePOCO.Password;
 
             //Or read table values directly in to the POCO that will be injected in to other classes
-            //TableRow row = table.Rows[0];
+            //DataTableRow row = table.Rows[0];
             //horizontalTableShared.Username = row["Username"];
             //horizontalTableShared.Password = row["Password"];
-
-
-
-
         }
 
         [Given(@"or an inline vertical table like this")]
@@ -72,10 +64,8 @@ namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps
             verticalTableShared.FirstName = localVerticalTablePOCO.FirstName;
             verticalTableShared.LastName = localVerticalTablePOCO.LastName;
             verticalTableShared.Age = localVerticalTablePOCO.Age;
-
-
         }
-        
+
         [Given(@"even a table with multpile rows")]
         public void GivenEvenATableWithMultpileRows(DataTable table)
         {
@@ -84,10 +74,6 @@ namespace com.edgewords.specflow.nunit.demo.scenariocontextinjection.Steps
             //CreateSet for multirows
             //multiRowTablePOCOSet = table.CreateSet<MultiRowTablePOCO>();
             IList<MultiRowTablePOCO> productlist = (IList<MultiRowTablePOCO>)table.CreateSet<MultiRowTablePOCO>();
-
-
-
-
         }
     }
 }
